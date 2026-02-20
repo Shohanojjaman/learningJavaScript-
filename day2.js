@@ -67,11 +67,18 @@ while (savingAmount < 5000) {
 // ********* Task 3 ************
 /**The "Try Again" System: Use a `do.while` loop to simulate a password entry. It should run at least once and keep asking until the "password" is correct.
  */
-const password = "Hello";
-let inputPassword = "Hello"; // It will comes from clint side.
+let inputPassword;
+const correctPassword = "Hello"; // The actual password
+let attempt = 0;
 do {
-  console.log("Try again.");
-} while (password !== inputPassword);
+  if (attempt === 0) {
+    inputPassword = prompt("Enter the password:");
+  } else {
+    inputPassword = prompt("Try Again. Enter the password:");
+  }
+  attempt++;
+} while (inputPassword !== correctPassword);
+console.log("Access granted!");
 
 // ********** Task 4 ***********
 //The Grid Generator: Use a nested loop to create a 3x3 grid of stars (*) in the console.
